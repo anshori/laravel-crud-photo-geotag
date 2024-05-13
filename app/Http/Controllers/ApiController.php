@@ -31,6 +31,7 @@ class ApiController extends Controller
 					'name' => $geotag->name,
 					'description' => $geotag->description,
 					'photo' => $geotag->photo,
+					'created_at' => date_format($geotag->created_at,"Y-m-d H:i:s"),
 				],
 			];
 		}

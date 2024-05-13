@@ -38,6 +38,7 @@
         var popupContent = "<h5>" + feature.properties.name + "</h5>" +
           "<p>" + feature.properties.description + "</p>" +
           "<p>Coordinates: " + feature.geometry.coordinates + "</p>" +
+					"<p>Created at: " + feature.properties.created_at + "</p>" +
           "<p><img src='{{ asset('storage/images') }}/" + feature.properties.photo +
           "' class='img-thumbnail' alt=''></p>" +
           "<hr>" +

@@ -89,14 +89,15 @@ class GeotagController extends Controller
 				$latitude = $lat_direction * ($lat_degrees + ($lat_minutes / 60) + ($lat_seconds / (60 * 60)));
 				$longitude = $lon_direction * ($lon_degrees + ($lon_minutes / 60) + ($lon_seconds / (60 * 60)));
 			} else {
-				$latitude = null;
-				$longitude = null;
+				return redirect()->back()->with('error', 'Failed to create location from geotag photo, your photo is not a geotagged photo.');
 			}
 
 			$photo_name = "photo_" . time() . "." . strtolower($photo->getClientOriginalExtension());
 			$photo->move('storage/images', $photo_name);
+
+			
 		} else {
-			return redirect()->back()->with('error', 'Failed to create geotag photo');
+			return redirect()->back()->with('error', 'Failed to create location from geotag photo');
 		}
 
 		$data = [
@@ -111,7 +112,7 @@ class GeotagController extends Controller
 			return redirect()->back()->with('error', 'Failed to create geotag photo');
 		}
 
-		return redirect()->back()->with('success', 'Geotag photo created successfully');
+		return redirect()->back()->with('success', 'Location from geotag photo created successfully');
 	}
 
 	/**
