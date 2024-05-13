@@ -4,6 +4,12 @@
 
 This application is a simple CRUD application that allows users to upload geotagged photos and get location coordinates from them. This application uses LeafletJS to display photo locations on a map.
 
+## Features
+
+- Display location coordinates on a map
+- Upload geotagged photo
+- Delete location coordinates and photo
+
 ## Requirements
 
 - PHP 8.2 or higher
