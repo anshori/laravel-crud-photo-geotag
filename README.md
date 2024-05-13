@@ -2,26 +2,28 @@
 
 ## About
 
-This application is a simple CRUD application that allows users to upload photos and tag them with a location. The application uses the LeafletJS to display the location of the photos on a map.
+This application is a simple CRUD application that allows users to upload geotagged photos and get location coordinates from them. This application uses LeafletJS to display photo locations on a map.
 
 ## Requirements
 
 - PHP 8.2 or higher
-- PHP Extensions: Fileinfo, Mbstring, MySQLi, Exif
+- PHP Extensions: Ctype, cURL, DOM, Fileinfo, Filter, Hash, Mbstring, OpenSSL, PCRE, PDO, Session, Tokenizer, XML, Exif
 - Composer
 - Node.js
 - NPM
-- MySQL
+- Database (MySQL, PostgreSQL, SQLite, SQL Server, etc.)
+
+[https://laravel.com/docs/11.x/deployment#server-requirements](https://laravel.com/docs/11.x/deployment#server-requirements)
 
 ## Installation
 
 - Clone the repository
-- Run `composer install`
-- Run `npm install`
-- Run `npm run build`
 - Create a new database
 - Copy the `.env.example` file to `.env`
 - Update the `.env` file with your database credentials
+- Run `composer install`
+- Run `npm install`
+- Run `npm run build`
 - Run `php artisan key:generate`
 - Run `php artisan migrate`
 - Run `php artisan storage:link`
