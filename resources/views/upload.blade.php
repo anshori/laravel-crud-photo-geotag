@@ -34,12 +34,15 @@
         </form>
       </div>
     </div>
+		<div class="text-center mt-3">
+			<small><i><a href="https://unsorry.net" target="_blank" class="text-decoration-none text-secondary">unsorry@2024</a></i></small>
+		</div>
   </div>
 @endsection
 
 @section('style')
   <style>
-    .card {
+    .container {
       margin-top: 100px;
       margin-bottom: 50px;
     }

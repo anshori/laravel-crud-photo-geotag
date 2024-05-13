@@ -26,11 +26,11 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="{{ route('index') }}"><i
+            <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" aria-current="page" href="{{ route('index') }}"><i
                 class="fa-solid fa-map-location-dot"></i> Map</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="{{ route('upload') }}"><i
+            <a class="nav-link {{ Request::is('upload') ? 'active' : '' }}" aria-current="page" href="{{ route('upload') }}"><i
                 class="fa-solid fa-upload"></i> Upload</a>
           </li>
           <li class="nav-item">
@@ -71,7 +71,7 @@
           <div class="row">
             <div class="col text-end">
               <small><a href="https://unsorry.net" target="_blank"
-                  class="text-decoration-none text-secondary">unsorry@2024</a></small>
+                  class="text-decoration-none text-secondary"><i>unsorry@2024</i></a></small>
             </div>
           </div>
         </div>

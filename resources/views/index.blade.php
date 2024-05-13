@@ -26,7 +26,7 @@
 	// init basemap
 	var basemap = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 		maxZoom: 18,
-		attribution: '<a href="https://unsorry.net" target="_blank">unsorry@2024</a>',
+		attribution: '<a href="https://unsorry.net" target="_blank" class="text-decoration-none">unsorry@2024</a>',
 	});
 
 	// add basemap to map
