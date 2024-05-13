@@ -23,6 +23,8 @@ This application is a simple CRUD application that allows users to upload geotag
 
 ## Installation
 
+#### Manual Installation
+
 - Clone the repository
 - Create a new database
 - Copy the `.env.example` file to `.env`
@@ -34,6 +36,12 @@ This application is a simple CRUD application that allows users to upload geotag
 - Run `php artisan migrate`
 - Run `php artisan storage:link`
 - Run `php artisan serve`
+- Visit `http://localhost:8000` in your browser
+
+#### Makefile Installation
+- Clone the repository
+- Run `make setup`
+- Run `make dev`
 - Visit `http://localhost:8000` in your browser
 
 ___
