@@ -54,17 +54,14 @@
         <div class="modal-body">
           <div class="row mb-4">
             <div class="col">
-              <h5 class="mb-3">Leaflet CRUD PostgreSQL Laravel</h5>
+              <h5 class="mb-3">Laravel CRUD Geotag Photos</h5>
               <p class="mb-0">Stack:</p>
               <ul>
                 <li>PHP Framework Laravel</li>
-                <li>PostgreSQL - PostGIS</li>
               </ul>
               <p class="mb-0">Library:</p>
               <ul>
                 <li>Leaflet JS</li>
-                <li>Leaflet Draw</li>
-                <li>ESRI Terraformer WKT Parser</li>
                 <li>Bootstrap 5</li>
                 <li>Font Awesome 6</li>
               </ul>
