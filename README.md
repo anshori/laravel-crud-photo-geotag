@@ -45,5 +45,12 @@ This application is a simple CRUD application that allows users to upload geotag
 - Run `make dev`
 - Visit `http://localhost:8000` in your browser
 
+## Preview
+![Preview Upload Page](public/screenshot/upload.png "Upload Page")
+
+![Preview Map Page](public/screenshot/map.png "Map Page")
+
+![Preview Edit Page](public/screenshot/edit.png "Edit Page")
+
 ___
 > unsorry@2024
