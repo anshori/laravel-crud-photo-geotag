@@ -1,4 +1,4 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a><h2 align="center">CRUD Photo Geotag</h2></p>
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a><h2 align="center">CRUD Geotag Photos</h2></p>
 
 ## About
 
@@ -8,6 +8,7 @@ This application is a simple CRUD application that allows users to upload geotag
 
 - Display location coordinates on a map
 - Upload geotagged photo
+- Update data geotagged photo
 - Delete location coordinates and photo
 
 ## Requirements

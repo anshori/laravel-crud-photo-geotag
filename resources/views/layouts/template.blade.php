@@ -57,11 +57,12 @@
               <h5 class="mb-3">Laravel CRUD Geotag Photos</h5>
               <p class="mb-0">Stack:</p>
               <ul>
-                <li>PHP Framework Laravel</li>
+                <li>Laravel PHP Framework</li>
               </ul>
               <p class="mb-0">Library:</p>
               <ul>
                 <li>Leaflet JS</li>
+                <li>jQuery</li>
                 <li>Bootstrap 5</li>
                 <li>Font Awesome 6</li>
               </ul>

@@ -112,7 +112,7 @@ class GeotagController extends Controller
 			return redirect()->back()->with('error', 'Failed to create geotag photo');
 		}
 
-		return redirect()->back()->with('success', 'Location from geotag photo created successfully');
+		return redirect()->to(route('index'))->with('success', 'Location from geotag photo created successfully');
 	}
 
 	/**
@@ -128,7 +128,14 @@ class GeotagController extends Controller
 	 */
 	public function edit(string $id)
 	{
-		//
+		$data = [
+			'title' => 'Edit Data',
+			'page' => 'edit-data',
+			'id' => $id,
+			'point' => $this->geotag->find($id),
+		];
+
+		return view('edit', $data);
 	}
 
 	/**
@@ -136,7 +143,16 @@ class GeotagController extends Controller
 	 */
 	public function update(Request $request, string $id)
 	{
-		//
+		$data = [
+			'name' => $request->name,
+			'description' => $request->description,
+		];
+
+		if (!$this->geotag->find($id)->update($data)) {
+			return redirect()->back()->with('error', 'Failed to update data geotag photo');
+		}
+
+		return redirect()->to(route('index'))->with('success', 'Data geotag photo updated successfully');
 	}
 
 	/**
