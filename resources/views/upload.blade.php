@@ -20,8 +20,20 @@
           <div class="mb-3">
             <label for="photo" class="form-label">Photo *</label>
             <input type="file" class="form-control" id="photo" name="photo"
-              onchange="document.getElementById('image-preview').src = window.URL.createObjectURL(this.files[0])">
+              onchange="uploadimage()">
           </div>
+					<div class="mb-3">
+						<div class="row">
+							<div class="col">
+								<label for="latitude" class="form-label">Latitude</label>
+								<input type="text" class="form-control" id="latitude" name="latitude" readonly>
+							</div>
+							<div class="col">
+								<label for="longitude" class="form-label">Longitude</label>
+								<input type="text" class="form-control" id="longitude" name="longitude" readonly>
+							</div>
+						</div>
+					</div>
           <div class="mb-3">
             <img id="image-preview" class="img-thumbnail border border-0" alt="" width="400">
           </div>
@@ -53,4 +65,46 @@
 @endsection
 
 @section('script')
+<script>
+	function uploadimage() {
+		// get file photo
+		var photo = document.getElementById('photo');
+		var filephoto = photo.files[0];
+
+		// set preview image
+		document.getElementById('image-preview').src = window.URL.createObjectURL(filephoto);
+
+		// get exif data
+		var exif = EXIF.getData(filephoto, function() {
+			// check if photo has GPS data
+			if (this.exifdata.GPSLatitude === undefined || this.exifdata.GPSLongitude === undefined) {
+				alert('Your photo does not have GPS data. Please upload another photo.');
+				return;
+			} else {
+				// get latitude and longitude
+				var latitude = EXIF.getTag(this, "GPSLatitude");
+				var longitude = EXIF.getTag(this, "GPSLongitude");
+	
+				// check if latitude is negative and convert DMS to DD
+				if (EXIF.getTag(this, "GPSLatitudeRef") == "S") {
+					lat = -1*(latitude[0] + latitude[1] / 60 + latitude[2] / 3600);
+				} else {
+					lat = latitude[0] + latitude[1] / 60 + latitude[2] / 3600;
+				}
+
+				// check if longitude is negative and convert DMS to DD
+				if (EXIF.getTag(this, "GPSLongitudeRef") == "W") {
+					lon = -1*(longitude[0] + longitude[1] / 60 + longitude[2] / 3600);
+				} else {
+					lon = longitude[0] + longitude[1] / 60 + longitude[2] / 3600;
+				}
+	
+				// set value to input
+				document.getElementById('latitude').value = lat.toFixed(7);
+				document.getElementById('longitude').value = lon.toFixed(7);
+			}
+		});
+
+	}
+</script>
 @endsection
